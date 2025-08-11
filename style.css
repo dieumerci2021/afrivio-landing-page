@@ -1,0 +1,99 @@
+/* Importation de la police Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* Styles généraux pour le corps de la page */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f2f5; /* Un gris très clair pour un fond moderne */
+    color: #333; /* Couleur de texte sombre pour une bonne lisibilité */
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Permet de centrer verticalement le contenu */
+}
+
+/* Conteneur principal de la page */
+.hero {
+    text-align: center;
+    background-color: #fff;
+    padding: 4rem 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Ombre légère pour un effet de profondeur */
+    max-width: 600px;
+    width: 90%;
+    margin-top: -50px; /* Remonte le contenu pour un effet visuel */
+}
+
+/* Styles du logo */
+.logo {
+    width: 150px;
+    margin-bottom: 2rem;
+}
+
+/* Styles pour le titre principal */
+.hero h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color: #1a1a1a;
+}
+
+/* Styles pour le paragraphe de description */
+.hero p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    color: #555;
+}
+
+/* Styles du formulaire */
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Styles des champs de saisie */
+.signup-form input {
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.signup-form input:focus {
+    border-color: #007bff; /* Couleur de bordure au focus */
+    outline: none; /* Enlève la bordure par défaut du navigateur */
+}
+
+/* Styles du bouton d'appel à l'action (CTA) */
+.cta-button {
+    background-color: #f1b400; /* Une couleur dorée, inspirée du logo, pour attirer l'attention */
+    color: #fff;
+    border: none;
+    padding: 1rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.cta-button:hover {
+    background-color: #d19a00; /* Changement de couleur au survol */
+    transform: translateY(-2px); /* Léger effet de survol */
+}
+
+/* Media Queries pour la mise en page responsive */
+/* Le formulaire s'aligne horizontalement sur les grands écrans */
+@media (min-width: 768px) {
+    .signup-form {
+        flex-direction: row;
+    }
+    .signup-form input {
+        flex-grow: 1; /* Les champs prennent l'espace disponible */
+    }
+}
