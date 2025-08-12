@@ -1,20 +1,22 @@
 document.addEventListener("DOMContentLoaded", function() {
+    // Sélection des éléments du DOM
     const form = document.querySelector(".signup-form");
     const ctaButton = document.querySelector(".cta-button");
 
+    // Écoute de l'événement de soumission du formulaire
     form.addEventListener("submit", function(event) {
-        // Empêche le comportement par défaut du formulaire (rechargement de la page)
-        event.preventDefault();
+        // Empêche le rechargement de la page par défaut
+        event.preventDefault(); 
 
-        // Simule l'envoi des données (en production, vous enverriez à un vrai serveur)
-        // Ici, nous affichons simplement un message de succès
+        // Récupération des données du formulaire
+        const formData = new FormData(form);
 
+        // Affiche un message de succès
         ctaButton.textContent = "Inscription réussie ! 🎉";
-        ctaButton.disabled = true; // Désactive le bouton pour éviter les envois multiples
-        ctaButton.style.backgroundColor = "#28a745"; // Changement de couleur pour indiquer le succès
-
-        // Vous pouvez ajouter ici la logique d'envoi à Formspree ou à un autre service
-        // const formData = new FormData(form);
+        ctaButton.disabled = true; 
+        ctaButton.style.backgroundColor = "#28a745"; // Couleur verte pour le succès
+        
+        // Optionnel : Vous pouvez décommenter le code ci-dessous pour l'envoi réel à Formspree
         // fetch(form.action, {
         //     method: 'POST',
         //     body: formData,
@@ -22,15 +24,21 @@ document.addEventListener("DOMContentLoaded", function() {
         //         'Accept': 'application/json'
         //     }
         // })
-        // .then(response => response.json())
-        // .then(data => {
-        //     if (data.ok) {
+        // .then(response => {
+        //     if (response.ok) {
         //         ctaButton.textContent = "Inscription réussie ! 🎉";
         //         ctaButton.disabled = true;
         //         ctaButton.style.backgroundColor = "#28a745";
         //     } else {
-        //         alert("Une erreur s'est produite.");
+        //         throw new Error('Erreur lors de l\'envoi du formulaire.');
         //     }
+        // })
+        // .catch(error => {
+        //     alert("Une erreur s'est produite lors de l'inscription.");
+        //     console.error('Erreur:', error);
+        //     ctaButton.textContent = "Erreur, réessayez";
+        //     ctaButton.disabled = false;
+        //     ctaButton.style.backgroundColor = "#dc3545"; // Couleur rouge pour l'erreur
         // });
     });
 });
